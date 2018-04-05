@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WinAppTest.Views.BatiDiagMenuPage"
+             xmlns:mvvm="clr-namespace:WinAppTest.ViewModels;assembly=WinAppTest"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView">
+    <ContentPage.BindingContext>
+        <mvvm:BatiDiagMenuFormViewModel x:Name="vModel" />
+    </ContentPage.BindingContext>
+
+    <flv:FlowListView SeparatorVisibility="None" HasUnevenRows="true" x:Name="lstViewMenuItems" FlowColumnCount="4" FlowItemTapped="Handle_FlowItemTapped" FlowLastTappedItem="{Binding SelectedMenuItem}" FlowItemsSource="{Binding LstMenuItems}">
+        <flv:FlowListView.Header>
+            <Button x:Name="btnAddItem" Text="Add Menu Item" Clicked="btnAddItem_Clicked"/>
+        </flv:FlowListView.Header>
+        <flv:FlowListView.FlowColumnTemplate>
+            <DataTemplate>
+                <Grid Padding="3" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="160" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout HeightRequest="120">
+                        <StackLayout>
+                            <Image Aspect="AspectFill" Source="{Binding Picture}" x:Name="imgMenuItem" HeightRequest="60" />
+                        </StackLayout>
+
+                        <StackLayout>
+                            <Label Text="{Binding Title}" HorizontalTextAlignment="Center" LineBreakMode="HeadTruncation" />
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+            </DataTemplate>
+        </flv:FlowListView.FlowColumnTemplate>
+    </flv:FlowListView>
+</ContentPage>

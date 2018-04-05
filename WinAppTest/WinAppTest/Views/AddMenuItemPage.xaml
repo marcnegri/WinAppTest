@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WinAppTest.Views.AddMenuItemPage">
+
+    <StackLayout HorizontalOptions="CenterAndExpand">
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            <Entry Placeholder="Titre du Menu" x:Name="etyTitre" HorizontalTextAlignment="Center"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+
+            <Image Source="addImage.png" HeightRequest="80" WidthRequest="80" x:Name="imgAddImage">
+
+                <Image.GestureRecognizers>
+
+                    <TapGestureRecognizer Tapped="imgAddImage_Clicked"/>
+
+                </Image.GestureRecognizers>
+
+            </Image>
+
+        </StackLayout>
+
+        <Button Clicked="btnAddItem_Clicked" Text="Ajouter au menu" BorderColor="Silver" HorizontalOptions="FillAndExpand"/>
+
+    </StackLayout>
+
+</ContentPage>
