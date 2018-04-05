@@ -24,7 +24,7 @@
 
                     <StackLayout HeightRequest="120">
                         <StackLayout>
-                            <Image Aspect="AspectFill" Source="{Binding Picture}" x:Name="imgMenuItem" HeightRequest="60" />
+                            <Image Aspect="AspectFill" Source="{Binding Picture}" x:Name="imgMenuItem" HeightRequest="120" />
                         </StackLayout>
 
                         <StackLayout>
